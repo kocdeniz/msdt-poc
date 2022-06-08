@@ -5,7 +5,7 @@
 --------------
 
 
-On May 30, 2022, Microsoft issued CVE-2022-30190 regarding the Microsoft Support Diagnostic Tool(MSDT)in Windows vulnerability.It is basically a remote code execution technique used through MSDT and MS Office program, namely Microsoft Word.
+On May 30, 2022, Microsoft issued CVE-2022-30190 regarding the Microsoft Support Diagnostic Tool (MSDT) in Windows vulnerability.It is basically a remote code execution technique used through MSDT and MS Office program, namely Microsoft Word. It was first discovered on may 27 by nao-sec on twitter and he was a security researcher who is looking around virus total for different attack vectors targeting CVE 2021-40444 which was previus vulnerability taking advantage of the mhtml protocol targeting MS documents that could be used initial access for remote code execution
 
 
 
