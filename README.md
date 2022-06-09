@@ -43,6 +43,9 @@ $ python3 follina.py
 ![Screenshot from 2022-06-09 01-46-32](https://user-images.githubusercontent.com/74410580/172817080-43919074-fcaf-4af0-b690-ee3cba32d059.png)
 
 
+
+<br>
+
 On windows machine as a victim, open up microsoft word documents as you might any other document except this one in particular includes external reference to an another location and executes it.
 
 
