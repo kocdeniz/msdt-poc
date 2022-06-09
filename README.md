@@ -86,7 +86,7 @@ Another option would be to remove the file type association for ms-msdt (can be 
 
 # Conclusion
 
-There is currently no available legit patch that would come from Microsoft. Until that time,what we learn is that, the indusrty will have a hard time to inspect incoming impact of threats. This vulnerability is brand new, simple and a current zero day that has no fix.
+There is currently no available legit patch that would come from Microsoft. Until that time,what we learn is that, the indusrty will have a hard time to inspect incoming impact of threats. This vulnerability is brand new, simple and a current zero day that has no concrete fix.
 
 
 
