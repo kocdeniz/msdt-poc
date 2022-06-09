@@ -7,7 +7,7 @@
 
 
 
-On May 30, 2022, Microsoft issued CVE-2022-30190 regarding the Microsoft Support Diagnostic Tool (MSDT) in Windows vulnerability.It is basically a remote code execution technique used through MSDT and MS Office program, namely Microsoft Word. 
+On May 30, 2022, Microsoft issued CVE-2022-30190 regarding the Microsoft Support Diagnostic Tool (MSDT) in Windows vulnerability.It is basically a remote code execution technique used through MSDT and MS Office program, namely Microsoft Word. This attack takes place using malicious Word documents that execute PowerShell commands via the Microsoft Diagnostic Tool (MSDT). The ‘Follina’ zero-day features a remote code execution that works without elevated privileges, does not require macro enablement to execute binaries or scripts, and can bypass Windows Defender detection.
 
 
 
@@ -65,10 +65,25 @@ As expected after running the document on victim machine, it offered initial acc
 
 Well, it might seem very low privelege when I showcased on my virtual machine but it opens the door for threat actor to do lateral movement or upload persistence to maintain acceess, even escalate priveleges so that they become the administrator,root account etc.
 
-To explain, an html file inside the word document was retrieving by windows machine is the key element of MS RCE(remote code execution) because it includes invoking payload which eventually staging powershell code to be executed encoded in base 64. To see the powershell client script a little bit clearly here is the encoded status of the powershell commands inside this html file
+To explain, an html file inside the word document was retrieving by windows machine is the key element of MS RCE(remote code execution) because it includes invoking payload which eventually staging powershell code to be executed encoded in base 64. To see the powershell client script a little bit clearly here is below the encoded and decoded status of the powershell commands inside this html file.
 
 
 ![Screenshot from 2022-06-09 14-00-15](https://user-images.githubusercontent.com/74410580/172833699-01276317-f19e-4049-95e1-5994824faddd.png)
+
+<br>
+Considering these powershell commands,a typical adversory behaviour would be fishing campaing, stealing information from local browsers, mail clients and file services, conducts machine recon and then zips it for exfil.Moreover this remote code execution actually can derived into whatever an adversory want.That could be remote access trojan or cryptocurrency miner or ransomware, name it.
+
+#Mitigation Suggestions
+
+Microsoft has recently released guidance on disabling the Microsoft Diagnostic Tool (MSDT) URL protocol. The Microsoft Support Diagnostic Tool (MSDT) is a tool designed to collect information to send to the Microsoft Support but it’s currently unclear how Microsoft intends to respond to the discovery and how quickly a patch will be made available.
+
+![Screenshot from 2022-06-09 15-10-46](https://user-images.githubusercontent.com/74410580/172843719-b5564cf1-6b3b-4ae8-8a0a-247d2c561fcf.png)
+
+<br>Another option is to remove the file type association for ms-msdt (can be done in Windows Registry HKCR:\ms-msdt
+
+Another option would be to remove the file type association for ms-msdt (can be done in Windows Registry HKCR:\ms-msdt. When the malicious document is opened, Office will not be able to invoke ms-msdt thus preventing the malware from running. Be sure to make a backup of the registry settings before using this mitigation. for more information https://twitter.com/DidierStevens/status/1531033449561264128
+
+
 
 
 
