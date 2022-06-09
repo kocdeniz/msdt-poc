@@ -63,7 +63,7 @@ As expected after running the document on victim machine, it offered initial acc
 
 # How far Could this exploit go further in the wild?
 
-Well, it might seem very low privelege when I showcased on my virtual machine but it opens the door for threat actor to do lateral movement or upload persistence to maintain acceess, even escalate priveleges so that they become the administrator,root account etc.
+Well, it might seem very low privelege when I showcased on my virtual machine but it opens the door for threat actor to do lateral movement or upload persistence to maintain access, even escalate priveleges so that they become the administrator,root account etc.
 
 To explain, an html file inside the word document was retrieving by windows machine is the key element of MS RCE(remote code execution) because it includes invoking payload which eventually staging powershell code to be executed encoded in base 64. To see the powershell client script a little bit clearly here is below the encoded and decoded status of the powershell commands inside this html file.
 
@@ -79,7 +79,7 @@ Microsoft has recently released guidance on disabling the Microsoft Diagnostic T
 
 ![Screenshot from 2022-06-09 15-10-46](https://user-images.githubusercontent.com/74410580/172843719-b5564cf1-6b3b-4ae8-8a0a-247d2c561fcf.png)
 
-<br>Another option is to remove the file type association for ms-msdt (can be done in Windows Registry HKCR:\ms-msdt
+<br>
 
 Another option would be to remove the file type association for ms-msdt (can be done in Windows Registry HKCR:\ms-msdt. When the malicious document is opened, Office will not be able to invoke ms-msdt thus preventing the malware from running. Be sure to make a backup of the registry settings before using this mitigation. for more information https://twitter.com/DidierStevens/status/1531033449561264128
 
