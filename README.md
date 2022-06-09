@@ -57,8 +57,18 @@ On windows machine as a victim, open up microsoft word documents as you might an
 
 ![Untitled](https://user-images.githubusercontent.com/74410580/172826268-6170639b-cea7-4639-bef7-dec20a7e7f84.png)
 
+<br>
+As expected after running the document on victim machine, it offered initial access under the the priveleges and permissions of the user account that invoked microsoft word.
 
 
+# How far Could this exploit go further in the wild?
+
+Well, it might seem very low privelege when I showcased on my virtual machine but it opens the door for threat actor to do lateral movement or upload persistence to maintain acceess, even escalate priveleges so that they become the administrator,root account etc.
+
+To explain, an html file inside the word document was retrieving by windows machine is the key element of MS RCE(remote code execution) because it includes invoking payload which eventually staging powershell code to be executed encoded in base 64. To see the powershell client script a little bit clearly here is the encoded status of the powershell commands inside this html file
+
+
+![Screenshot from 2022-06-09 14-00-15](https://user-images.githubusercontent.com/74410580/172833699-01276317-f19e-4049-95e1-5994824faddd.png)
 
 
 
