@@ -73,7 +73,7 @@ To explain, an html file inside the word document was retrieving by windows mach
 <br>
 Considering these powershell commands,a typical adversory behaviour would be fishing campaing, stealing information from local browsers, mail clients and file services, conducts machine recon and then zips it for exfil.Moreover this remote code execution actually can derived into whatever an adversory want.That could be remote access trojan or cryptocurrency miner or ransomware, name it.
 
-#Mitigation Suggestions
+# Mitigation Suggestions
 
 Microsoft has recently released guidance on disabling the Microsoft Diagnostic Tool (MSDT) URL protocol. The Microsoft Support Diagnostic Tool (MSDT) is a tool designed to collect information to send to the Microsoft Support but it’s currently unclear how Microsoft intends to respond to the discovery and how quickly a patch will be made available.
 
@@ -84,7 +84,9 @@ Microsoft has recently released guidance on disabling the Microsoft Diagnostic T
 Another option would be to remove the file type association for ms-msdt (can be done in Windows Registry HKCR:\ms-msdt. When the malicious document is opened, Office will not be able to invoke ms-msdt thus preventing the malware from running. Be sure to make a backup of the registry settings before using this mitigation. for more information https://twitter.com/DidierStevens/status/1531033449561264128
 
 
+# Conclusion
 
+There is currently no available legit patch that would come from Microsoft. Until that time,what we learn is that, the indusrty will have a hard time to inspect incoming impact of threats. This vulnerability is brand new, simple and a current zero day that has no fix.
 
 
 
