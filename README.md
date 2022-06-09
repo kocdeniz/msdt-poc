@@ -25,5 +25,34 @@ Nao-sec found some compelling document which was using external reference inside
 A former Microsoft employed security researcher Kevin Beaumont named the vulnerability “Folina,” because the 0 day code references 0438, that's the place code for Follina, Italy. Beaumont referred to that Defender for Endpoint did now no longer hit upon the exploit, which retrieves an HTML file from a remote webserver and lets in PowerShell code execution.
 
 
+# Explanation of the exploit
+
+This attack vector only needs one thing which a user downloads a malicious office documents and they open it or just navigate to it.
+I myself use my ubuntu machine and and download python file that is from John Hammond github page https://github.com/JohnHammond/msdt-follina 
+
+To create malicious word document and stage a payload with an http server 
+
+
+```
+$ python3 follina.py   
+[+] copied staging doc /tmp/9mcvbrwo
+[+] created maldoc ./follina.doc
+[+] serving html payload on :8000
+```
+
+![Screenshot from 2022-06-09 01-46-32](https://user-images.githubusercontent.com/74410580/172817080-43919074-fcaf-4af0-b690-ee3cba32d059.png)
+
+
+On windows machine as a victim, open up microsoft word documents as you might any other document except this one in particular includes external reference to an another location and executes it.
+
+
+
+![Untitled](https://user-images.githubusercontent.com/74410580/172826268-6170639b-cea7-4639-bef7-dec20a7e7f84.png)
+
+
+
+
+
+
 
 
